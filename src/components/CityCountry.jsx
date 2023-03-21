@@ -5,7 +5,7 @@ import getData from '../hooks/getData';
 
 
 const CityCountry = ({customer}) => {
-    const {data, loading, error, refetch} = getData('http://ip-api.com/json')
+    const {data, loading, error, refetch} = getData('//ip-api.com/json')
     var city = data?.city
     var country = data?.countryCode
   return (
