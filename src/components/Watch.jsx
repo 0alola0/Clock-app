@@ -10,7 +10,7 @@ import Details from './Details';
 const Watch = () => {
     const [toggle, setToggle] = useState(true)
 
-    const {data, loading, error, refetch} = getData('http://worldtimeapi.org/api/ip')
+    const {data, loading, error, refetch} = getData('//worldtimeapi.org/api/ip')
     let currentTime = data?.datetime.slice(11, 16)
     let greeting = parseInt(currentTime?.slice(0,2))
     let word = greeting<5? "MORNING" : (greeting<12? "AFTERNOON" : "EVENING")
