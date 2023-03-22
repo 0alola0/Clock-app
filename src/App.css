@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+:root{
+  --header: 200px;
+  --sm-header: 56px;
+  --lg-text: 24px;
+  --md-text: 20px;
+  --zone: 40px;
+}
 .App{
   width: 100%;
 }
@@ -29,7 +36,7 @@
 }
 .welcomer-text{
   font-weight: 400;
-  font-size: 20px;
+  font-size: var(--md-text);
   letter-spacing: 4px;
   margin: 0;
 }
@@ -39,17 +46,17 @@
 }
 .time{
   font-weight: 700;
-  font-size: 200px; 
+  font-size: var(--header); 
   margin: 0; 
 }
 .zone{
   font-weight: 300;
-  font-size: 40px;
+  font-size: var(--zone);
 }
 .location{
   margin: 0;
   font-weight: 700;
-  font-size: 24px;
+  font-size: var(--lg-text);
   letter-spacing: 4.8px;
 }
 .toggle-out{
@@ -58,7 +65,7 @@
   justify-content: space-between;
   align-items: flex-end;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 16px;
   letter-spacing: 4.8px;
 }
 .toggle-btn{
@@ -75,7 +82,7 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 16px;
-  padding-right: 21px;
+  padding-right: 16px;
   box-sizing: border-box;
 }
 .toggle-btn>img{
@@ -92,7 +99,7 @@
   transform: rotate(180deg);
 }
 .details-div{
-  margin-top: 56px;
+  margin-top: var(--sm-header);
 }
 
 .details-wrapper{
@@ -116,7 +123,61 @@
 }
 .detail-bold-text{
   font-weight: 700;
-  font-size: 56px;
+  font-size: var(--sm-header);
   margin: 0;
   margin-bottom: 42px;
+}
+@media only screen and (max-width: 900px){
+  :root{
+    --header: 175px;
+    --sm-header: 40px;
+    --lg-text: 18px;
+    --md-text: 18px;
+    --zone: 32px;
+  }
+  .toggle-out{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 164px;
+  }
+  .watch-wrapper{
+    padding-top: 388px;
+  }
+  .details-left{
+    border: none;
+  }
+}
+@media only screen and (max-width: 630px){
+  :root{
+    --header: 100px;
+    --sm-header: 20px;
+    --lg-text: 15px;
+    --md-text: 15px;
+    --zone: 15px;
+  }
+  .temporaryText{
+    display: none;
+  }
+  .watch-wrapper{
+    padding-top: 227px;
+  }
+  .inner-detail{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  .details-wrapper{
+    flex-direction: column;
+    padding-top: 32px;
+    padding-bottom: 48px;
+  }
+  .details-left{
+    margin: 0;
+  }
+  .detail-bold-text, .detail-meek-text{
+    margin: 0;
+  }
+
 }

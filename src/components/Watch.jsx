@@ -43,7 +43,7 @@ const Watch = () => {
         <div className="watch-wrapper">
             <div className="welcomer">
                 <img src={word=="EVENING"? "/assets/desktop/icon-moon.svg" : "/assets/desktop/icon-sun.svg"} alt="" />
-                <h3 className="welcomer-text"> GOOD {word}, IT'S CURRENTLY</h3>
+                <h3 className="welcomer-text"> GOOD {word}, <span className="temporaryText">IT'S CURRENTLY</span></h3>
             </div>
             <div className="time-wrapper">
                 <h1 className="time">{currentTime}</h1>
