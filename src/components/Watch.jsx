@@ -13,7 +13,7 @@ const Watch = () => {
     const {data, loading, error, refetch} = getData('//worldtimeapi.org/api/ip')
     let currentTime = data?.datetime.slice(11, 16)
     let greeting = parseInt(currentTime?.slice(0,2))
-    let word = greeting<5? "MORNING" : (greeting<12? "AFTERNOON" : "EVENING")
+    let word = greeting<5? "MORNING" : (greeting<18? "AFTERNOON" : "EVENING")
     console.log(word)
 
     const handleToggle = () => {
@@ -22,35 +22,44 @@ const Watch = () => {
     }
     const height = {
         overflow: 'hidden',
-        maxHeight: toggle? 0 : 500
-    }    
-    
+        maxHeight: toggle? 0 : 500,
+        backgroundColor: word=="EVENING"? "rgba(0, 0, 0, 0.589)" : "rgba(214, 214, 214, 0.589)"
+    }
+    const currentBorder = {
+        borderColor: word=="EVENING"? "black" : "white"
+    }
+    const currentColor  = {
+        color: word=="EVENING"? "black" : "white"
+    }
+
+    document.body.style.backgroundImage = word=="EVENING"? `url("/assets/desktop/bg-image-nighttime.jpg")` : `url("/assets/desktop/bg-image-daytime.jpg")`;
+
     console.log(data, currentTime)
 
     if(loading) return (<LoadingScreen/>)
 
   return (
     <div>
-        <div className="out-container">
-            <div className="watch-wrapper">
-                <div className="welcomer">
-                    <img src={word=="EVENING"? "/assets/desktop/icon-moon.svg" : "/assets/desktop/icon-sun.svg"} alt="" />
-                    <h3 className="welcomer-text"> GOOD {word}, IT'S CURRENTLY</h3>
-                </div>
-                <div className="time-wrapper">
-                    <h1 className="time">{currentTime}</h1>
-                    <h3 className="zone">{data?.abbreviation}</h3>
-                </div>
-                <CityCountry customer={data?.client_ip}/>
+        <div className="watch-wrapper">
+            <div className="welcomer">
+                <img src={word=="EVENING"? "/assets/desktop/icon-moon.svg" : "/assets/desktop/icon-sun.svg"} alt="" />
+                <h3 className="welcomer-text"> GOOD {word}, IT'S CURRENTLY</h3>
             </div>
-            <button onClick={handleToggle}>
+            <div className="time-wrapper">
+                <h1 className="time">{currentTime}</h1>
+                <h3 className="zone">{data?.abbreviation}</h3>
+            </div>
+            <div className="toggle-out">
+                <CityCountry customer={data?.timezone}/>
+                <button className="toggle-btn" onClick={handleToggle}>
                 {toggle? "more" : "less"}
-                <img src="/assets/desktop/icon-arrow-down.svg" alt="arrow" />
-            </button>
+                <img src= {toggle? "/assets/desktop/icon-arrow-down.svg"  : "/assets/desktop/icon-arrow-up.svg" } alt="arrow" />
+                </button>
+            </div>
         </div>
 
         <div style={height} className="details-div" >
-            <Details data={data}/>
+            <Details currentBorder={currentBorder} currentColor={currentColor} data={data}/>
         </div>
     </div>
 

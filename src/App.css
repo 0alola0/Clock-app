@@ -1,44 +1,122 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.App{
+  width: 100%;
 }
 .details-div{
   transition: 1s;
 }
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+*{
+  font-family: 'Inter', sans-serif;
+  color: white;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.watch-wrapper{
+  width: 100%;
+  padding-inline: 10%;
+  padding-top: 233px;
+  box-sizing: border-box;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.out-container{
+  display: flex;
+  flex-direction: column;
+}
+.welcomer{
+  display: flex;
+  align-items: center;
+}
+.welcomer>img{
+  margin-right: 16px;
+}
+.welcomer-text{
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 4px;
+  margin: 0;
+}
+.time-wrapper{
+  display: flex;
+  align-items: flex-end;
+}
+.time{
+  font-weight: 700;
+  font-size: 200px; 
+  margin: 0; 
+}
+.zone{
+  font-weight: 300;
+  font-size: 40px;
+}
+.location{
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 4.8px;
+}
+.toggle-out{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 4.8px;
+}
+.toggle-btn{
+  background-color: white;
+  width: 146px;
+  height: 56px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: none;
+  border-radius: 28px;
+  color: rgba(0, 0, 0, 0.514);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  padding-right: 21px;
+  box-sizing: border-box;
+}
+.toggle-btn>img{
+  background-color: #303030;
+  width: 40px;
+  height: 40px;
+  padding-inline: 8px;
+  padding-block: 10px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: 1s;
+}
+.toggle-btn:hover>img{
+  transform: rotate(180deg);
+}
+.details-div{
+  margin-top: 56px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.details-wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  padding-block: 74px;
+  padding-inline: 10%;
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.details-left{
+  min-width: 50%;
+  border-right: 1px solid black;
+  margin-right: 94px;
 }
-
-.card {
-  padding: 2em;
+.detail-meek-text{
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 3px;    
 }
-
-.read-the-docs {
-  color: #888;
+.detail-bold-text{
+  font-weight: 700;
+  font-size: 56px;
+  margin: 0;
+  margin-bottom: 42px;
 }

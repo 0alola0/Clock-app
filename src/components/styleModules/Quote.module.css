@@ -1,0 +1,32 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    padding-top: 56px;
+    min-height: 100px;
+    width: 100%;
+    padding-inline: 11.65%;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+}
+.advice{
+    margin-top: 0;
+    width: 540px;
+    min-height: 70px;
+    color: white;
+    font-weight: 400;
+    line-height: 28px;
+    font-size: 18px;
+}
+.btn{
+    background-color: transparent;
+    height: 34px;
+    border: none;
+}
+.author{
+    margin: 0;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+}

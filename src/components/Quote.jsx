@@ -11,8 +11,8 @@ const Quote = () => {
     if(loading) return (<LoadingScreen/>)
 
   return (
-    <div>
-        <div className={QouteCSS.wrapper}>
+    <div className={QouteCSS.wrapper}>
+        <div className={QouteCSS.container}>
             <h3 className={QouteCSS.advice}> 
              <Typewriter
              onInit={(typewriter)=> {
@@ -27,7 +27,7 @@ const Quote = () => {
              </h3>
             <button className={QouteCSS.btn} onClick={refetch}><img src="/assets/desktop/icon-refresh.svg" alt="" /></button>
         </div>
-        <h3 className={QouteCSS.author}>{data?.authorSlug}</h3>
+        <h3 className={QouteCSS.author}>{data?.authorSlug.replace(/-/g, " ")}</h3>
     </div>
   );
 }
