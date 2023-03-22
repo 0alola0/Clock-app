@@ -7,7 +7,6 @@ import QouteCSS from './styleModules/Quote.module.css'
 const Quote = () => {
     const {data, loading, error, refetch} = getData('//api.quotable.io/random')
     var quote = data?.content
-    console.log("happening")
     if(loading) return (<LoadingScreen/>)
 
   return (

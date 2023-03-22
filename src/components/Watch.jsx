@@ -14,12 +14,10 @@ const Watch = () => {
     let currentTime = data?.datetime.slice(11, 16)
     let greeting = parseInt(currentTime?.slice(0,2))
     let word = greeting<5? "MORNING" : (greeting<18? "AFTERNOON" : "EVENING")
-    console.log(word)
-
     const handleToggle = () => {
         setToggle(!toggle)
-        console.log(toggle)
     }
+    
     const height = {
         overflow: 'hidden',
         maxHeight: toggle? 0 : 500,
@@ -33,8 +31,6 @@ const Watch = () => {
     }
 
     document.body.style.backgroundImage = word=="EVENING"? `url("/assets/desktop/bg-image-nighttime.jpg")` : `url("/assets/desktop/bg-image-daytime.jpg")`;
-
-    console.log(data, currentTime)
 
     if(loading) return (<LoadingScreen/>)
 
