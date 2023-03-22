@@ -4,7 +4,7 @@ body{
     background-color: rgb(163, 163, 163);
     background-blend-mode: multiply;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-position-y: 0;
